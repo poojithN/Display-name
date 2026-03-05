@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
 
 function App() {
   const [firstName,setFirstName] = useState("");
@@ -9,12 +8,10 @@ function App() {
   const handleSubmit = (e)=>{
     e.preventDefault();
 
-    if (!firstName.trim() || !lastName.trim()) {
-      setFullName("");
+    if (!firstName || !lastName) {
       return;
     }
-    const full = `${firstName} ${lastName}`;
-    setFullName(full);
+    setFullName(`${firstName} ${lastName}`);
   }
 
   return (
@@ -37,9 +34,9 @@ function App() {
         </div>
         <button type="submit">Submit</button>
       </form>
-      {fullName && <p>Full Name:{fullName}</p>}
+       {fullName && <p>Full Name:{fullName}</p>}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
