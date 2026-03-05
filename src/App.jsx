@@ -6,8 +6,13 @@ function App() {
   const [lastName,setLastName] = useState("");
   const[fullName,setFullName] = useState("");
 
-  const userHandling = (e)=>{
-    e.preventDefault()
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+
+    if (!firstName.trim() || !lastName.trim()) {
+      setFullName("");
+      return;
+    }
     const full = `${firstName} ${lastName}`;
     setFullName(full);
   }
@@ -15,16 +20,16 @@ function App() {
   return (
     <div>
       <h1>Full Name Display</h1>
-      <form onSubmit={userHandling}>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="">First Name:</label>
+          <label >First Name:</label>
           <input type="text" 
           value={firstName}
           placeholder='Enter first Name'
           onChange={(e)=>setFirstName(e.target.value)}/>
         </div>
         <div>
-          <label htmlFor="">Last Name:</label>
+          <label >Last Name:</label>
           <input type="text"
           value={lastName}
           placeholder='Enter last Name'
