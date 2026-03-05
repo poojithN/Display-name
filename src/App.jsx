@@ -35,7 +35,7 @@ function App() {
           placeholder='Enter last Name'
           onChange={(e)=>setLastName(e.target.value)} />
         </div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       {fullName && <p>Full Name:{fullName}</p>}
     </div>
