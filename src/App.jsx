@@ -34,7 +34,7 @@ function App() {
         </div>
         <button type="submit">Submit</button>
       </form>
-       {fullName && <p>Full Name:{fullName}</p>}
+       {fullName && <p>Full Name: {fullName}</p>}
     </div>
   );
 }
